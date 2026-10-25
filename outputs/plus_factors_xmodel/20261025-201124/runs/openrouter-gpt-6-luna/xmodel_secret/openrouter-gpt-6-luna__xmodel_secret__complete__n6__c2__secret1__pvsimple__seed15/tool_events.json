@@ -1,0 +1,642 @@
+[
+  {
+    "tool_name": "post_message",
+    "agent_name": "Shari",
+    "arguments": {
+      "message": "Shari: backend 0.94, testing 0.83; availability 7h. I can feasibly cover all ISSUE-0001 tasks, and ISSUE-0002 review (4h, medium priority) or test (5.6h); ISSUE-0002 implement (8h) is infeasible. To favor medium priority while avoiding collisions, I tentatively plan ISSUE-0002::review unless someone else is better suited/has a stronger claim. Please indicate intended task selections.",
+      "blackboard_id": 0
+    },
+    "result": {
+      "event_id": "c1dafc38-ec9d-4446-9e7a-fccf8317b650"
+    },
+    "phase": "planning",
+    "iteration": 1,
+    "planning_round": 1
+  },
+  {
+    "tool_name": "post_message",
+    "agent_name": "Arletha",
+    "arguments": {
+      "message": "Arletha here: I have testing 0.92 and 5h availability. I plan to take ISSUE-0002::review (4h, medium), which is feasible and my lowest-cost strong-skill option. Shari, please choose another task—perhaps an ISSUE-0001 task or ISSUE-0002::test (5.6h only if effort-over-availability is considered feasible); I will avoid the review collision if you have a compelling reason, but my preference is to keep it. Others, please share intended selections so we can cover distinct feasible tasks.",
+      "blackboard_id": 0
+    },
+    "result": {
+      "event_id": "e9ac2cf7-905b-4e94-9abd-1f1e6292ac51"
+    },
+    "phase": "planning",
+    "iteration": 1,
+    "planning_round": 1
+  },
+  {
+    "tool_name": "post_message",
+    "agent_name": "Wade",
+    "arguments": {
+      "message": "Wade: I have 4h availability with strong backend (0.95) and testing (0.76). I’ll tentatively take ISSUE-0001::triage (1.2h, low priority, cost 1.15) to avoid colliding with the medium-priority ISSUE-0002::review contention. Arletha can take ISSUE-0002::review; Shari has enough capacity for ISSUE-0002::test (5.6h) if effort/availability permits, or another distinct ISSUE-0001 task. Please share any alternative allocation needs.",
+      "blackboard_id": 0
+    },
+    "result": {
+      "event_id": "218ce971-c8c2-4dee-8e40-abf68e303824"
+    },
+    "phase": "planning",
+    "iteration": 1,
+    "planning_round": 1
+  },
+  {
+    "tool_name": "post_message",
+    "agent_name": "Myrle",
+    "arguments": {
+      "message": "Myrle here: with 10h availability and strong testing/backend, I plan ISSUE-0001::review (low, feasible; cost 1.90) to avoid Wade's intended triage and the contested ISSUE-0002::review. Shari can take ISSUE-0002::test (5.6h, feasible for her 7h) if she wishes. Please flag any collision/coordination changes.",
+      "blackboard_id": 0
+    },
+    "result": {
+      "event_id": "f7a87cad-374b-4213-a96f-5d7bdaa0c016"
+    },
+    "phase": "planning",
+    "iteration": 1,
+    "planning_round": 1
+  },
+  {
+    "tool_name": "post_message",
+    "agent_name": "Myrle",
+    "arguments": {
+      "message": "For coalition coordination: I can take ISSUE-0001::review (feasible, cost 1.90), while leaving ISSUE-0002 tasks to Junko/other agents. What task do you plan to claim? I'll avoid duplication.",
+      "blackboard_id": 1
+    },
+    "result": {
+      "event_id": "da81c6a0-f7b6-4906-80e7-6822a144d4db"
+    },
+    "phase": "planning",
+    "iteration": 1,
+    "planning_round": 1
+  },
+  {
+    "tool_name": "post_message",
+    "agent_name": "Junko",
+    "arguments": {
+      "message": "Junko: I plan ISSUE-0001::docs (1.5h, low) to avoid the current triage/review and ISSUE-0002::review claims. This is feasible for me; please flag if a collision emerges. (phase=planning, iter=1)",
+      "blackboard_id": 0
+    },
+    "result": {
+      "event_id": "d31ec118-df68-4d14-88e6-7a38fce928c3"
+    },
+    "phase": "planning",
+    "iteration": 1,
+    "planning_round": 1
+  },
+  {
+    "tool_name": "post_message",
+    "agent_name": "Junko",
+    "arguments": {
+      "message": "I plan to take ISSUE-0001::docs (feasible, cost 1.80), leaving ISSUE-0001::review to you and avoiding other stated claims. Let's keep distinct assignments. (phase=planning, iter=1)",
+      "blackboard_id": 1
+    },
+    "result": {
+      "event_id": "9ca91c68-8106-4c41-9550-2666f37d9acc"
+    },
+    "phase": "planning",
+    "iteration": 1,
+    "planning_round": 1
+  },
+  {
+    "tool_name": "post_message",
+    "agent_name": "Chantell",
+    "arguments": {
+      "message": "Chantell: I have 6h availability and strong testing (0.83); I plan to take ISSUE-0002::test (5.6h, medium priority, feasible; private cost 6.05). This avoids the review contention and lets us cover another medium task. Arletha can keep ISSUE-0002::review; Shari, please choose a distinct feasible task (likely ISSUE-0001).",
+      "blackboard_id": 0
+    },
+    "result": {
+      "event_id": "e7fef576-b1df-489c-b595-30a9c890de7a"
+    },
+    "phase": "planning",
+    "iteration": 1,
+    "planning_round": 1
+  },
+  {
+    "tool_name": "post_message",
+    "agent_name": "Shari",
+    "arguments": {
+      "message": "Thanks for coordinating. I withdraw my tentative ISSUE-0002::review plan; Arletha will take that and Chantell ISSUE-0002::test. Given the current distinct plans (Wade triage, Myrle review, Junko docs), I plan ISSUE-0001::test (2.1h, low priority, feasible; cost 2.03), which is cheaper than ISSUE-0001::implement. Please flag any conflict. (phase=planning, iter=1)",
+      "blackboard_id": 0
+    },
+    "result": {
+      "event_id": "80328671-9dcc-4689-b30d-e8e29500936f"
+    },
+    "phase": "planning",
+    "iteration": 1,
+    "planning_round": 2
+  },
+  {
+    "tool_name": "post_message",
+    "agent_name": "Arletha",
+    "arguments": {
+      "message": "Arletha confirms planned claim: ISSUE-0002::review (4h, medium priority; feasible within 5h, cost 3.93). Current distinct tentative coverage looks good: Chantell ISSUE-0002::test, Wade triage, Myrle review, Junko docs, Shari ISSUE-0001::test. I’ll hold this selection unless a conflict/change is raised. (phase=planning, iter=1)",
+      "blackboard_id": 0
+    },
+    "result": {
+      "event_id": "97f52b51-f777-427d-ad2e-fe24a19f38c1"
+    },
+    "phase": "planning",
+    "iteration": 1,
+    "planning_round": 2
+  },
+  {
+    "tool_name": "post_message",
+    "agent_name": "Wade",
+    "arguments": {
+      "message": "Wade confirms tentative ISSUE-0001::triage (low priority, 1.2h, cost 1.15), distinct from the current planned claims. This keeps all six agent selections feasible and leaves the medium-priority review/test tasks with Arletha and Chantell. (phase=planning, iter=1)",
+      "blackboard_id": 0
+    },
+    "result": {
+      "event_id": "39d357cc-f0ea-489c-9bae-d7462059c09e"
+    },
+    "phase": "planning",
+    "iteration": 1,
+    "planning_round": 2
+  },
+  {
+    "tool_name": "post_message",
+    "agent_name": "Myrle",
+    "arguments": {
+      "message": "Confirming my tentative choice remains ISSUE-0001::review (feasible, 1.5h; cost 1.90). Current plans are distinct; I’ll keep review unless anything changes.",
+      "blackboard_id": 0
+    },
+    "result": {
+      "event_id": "fd7c5c8c-9bd8-441a-9bf3-82e1089660c1"
+    },
+    "phase": "planning",
+    "iteration": 1,
+    "planning_round": 2
+  },
+  {
+    "tool_name": "post_message",
+    "agent_name": "Myrle",
+    "arguments": {
+      "message": "Confirmed: I’ll claim ISSUE-0001::review, distinct from your ISSUE-0001::docs plan. Let me know if you need any adjustment.",
+      "blackboard_id": 1
+    },
+    "result": {
+      "event_id": "9a91d572-2ccd-4986-a380-0014374c7379"
+    },
+    "phase": "planning",
+    "iteration": 1,
+    "planning_round": 2
+  },
+  {
+    "tool_name": "post_message",
+    "agent_name": "Junko",
+    "arguments": {
+      "message": "Confirmed my distinct planned selection is ISSUE-0001::docs (1.5h, feasible, cost 1.80). Myrle is taking ISSUE-0001::review. I will hold docs so we avoid coalition duplication.",
+      "blackboard_id": 1
+    },
+    "result": {
+      "event_id": "b36f7e5c-2cb0-452d-9322-27c7e890033b"
+    },
+    "phase": "planning",
+    "iteration": 1,
+    "planning_round": 2
+  },
+  {
+    "tool_name": "post_message",
+    "agent_name": "Junko",
+    "arguments": {
+      "message": "Junko confirms planned selection ISSUE-0001::docs, distinct and feasible. Current public plan appears to cover distinct tasks; I will retain docs.",
+      "blackboard_id": 0
+    },
+    "result": {
+      "event_id": "1c3ef0b3-a856-4fc6-8a7f-1e51c3aada27"
+    },
+    "phase": "planning",
+    "iteration": 1,
+    "planning_round": 2
+  },
+  {
+    "tool_name": "post_message",
+    "agent_name": "Chantell",
+    "arguments": {
+      "message": "Chantell confirms planned ISSUE-0002::test (5.6h; medium priority; feasible within my 6h; private cost 6.05). Current tentative claims are distinct across all six agents, so I’ll hold this selection unless a collision or feasibility issue arises. (phase=planning, iter=1)",
+      "blackboard_id": 0
+    },
+    "result": {
+      "event_id": "1e89ab15-66c9-48a9-91f1-1d4c8d224757"
+    },
+    "phase": "planning",
+    "iteration": 1,
+    "planning_round": 2
+  },
+  {
+    "tool_name": "post_message",
+    "agent_name": "Shari",
+    "arguments": {
+      "message": "Confirming I will retain ISSUE-0001::test (2.1h, low priority, feasible; private cost 2.03). All six current plans are distinct and feasible; taking this preserves full task count and is cheaper for me than the remaining ISSUE-0001::implement option.",
+      "blackboard_id": 0
+    },
+    "result": {
+      "event_id": "bc34adc4-e166-43a8-834e-56e35e6230d3"
+    },
+    "phase": "planning",
+    "iteration": 1,
+    "planning_round": 3
+  },
+  {
+    "tool_name": "post_message",
+    "agent_name": "Arletha",
+    "arguments": {
+      "message": "Arletha confirms planning selection remains ISSUE-0002::review (medium, 4h within my 5h availability; private cost 3.93). This is distinct from the currently coordinated choices: Chantell ISSUE-0002::test, Wade ISSUE-0001::triage, Myrle ISSUE-0001::review, Junko ISSUE-0001::docs, and Shari ISSUE-0001::test. I will hold review unless assignments change.",
+      "blackboard_id": 0
+    },
+    "result": {
+      "event_id": "df950d7e-13b8-4220-b32b-d4e6bb946d67"
+    },
+    "phase": "planning",
+    "iteration": 1,
+    "planning_round": 3
+  },
+  {
+    "tool_name": "post_message",
+    "agent_name": "Wade",
+    "arguments": {
+      "message": "Wade: I retain ISSUE-0001::triage (1.2h, feasible, cost 1.15). One possible score improvement: Myrle has 10h availability and strong testing/backend, so may be able to take ISSUE-0002::implement (8h, medium) instead of ISSUE-0001::review, if it is feasible and the cost is acceptable. That would keep task count at six while increasing medium-priority coverage; otherwise the current distinct plan is sound. (phase=planning, iter=1)",
+      "blackboard_id": 0
+    },
+    "result": {
+      "event_id": "ae142eb3-2654-4aa7-9f10-d0ccaf85894f"
+    },
+    "phase": "planning",
+    "iteration": 1,
+    "planning_round": 3
+  },
+  {
+    "tool_name": "post_message",
+    "agent_name": "Myrle",
+    "arguments": {
+      "message": "Update: considering switching my tentative ISSUE-0001::review to ISSUE-0002::implement (8h, medium; feasible within my 10h) to increase medium-priority coverage without disrupting anyone else's planned tasks. It is distinct from current claims. Any objection or competing plan for that task?",
+      "blackboard_id": 0
+    },
+    "result": {
+      "event_id": "dbfcd5f7-bc3e-419e-aad5-81c5d4b5406b"
+    },
+    "phase": "planning",
+    "iteration": 1,
+    "planning_round": 3
+  },
+  {
+    "tool_name": "post_message",
+    "agent_name": "Myrle",
+    "arguments": {
+      "message": "Coalition update: Junko's ISSUE-0001::docs remains distinct. I'm considering ISSUE-0002::implement (8h, medium, feasible within my 10h) instead of my previous ISSUE-0001::review to raise priority coverage; no conflict known. Please flag if you prefer another allocation.",
+      "blackboard_id": 1
+    },
+    "result": {
+      "event_id": "ed3c5da4-80f5-4e70-b09f-ba81bc988eb0"
+    },
+    "phase": "planning",
+    "iteration": 1,
+    "planning_round": 3
+  },
+  {
+    "tool_name": "post_message",
+    "agent_name": "Junko",
+    "arguments": {
+      "message": "Junko update: I retain ISSUE-0001::docs (feasible, cost 1.80). Myrle's possible shift to ISSUE-0002::implement is distinct from my docs plan and feasible at 8h/10h; that would increase medium-priority coverage while keeping everyone’s choices distinct. Current allocations otherwise look good.",
+      "blackboard_id": 0
+    },
+    "result": {
+      "event_id": "b69dde50-da93-4a11-89f5-6e03a8eef405"
+    },
+    "phase": "planning",
+    "iteration": 1,
+    "planning_round": 3
+  },
+  {
+    "tool_name": "post_message",
+    "agent_name": "Junko",
+    "arguments": {
+      "message": "Coalition update: I’ll retain ISSUE-0001::docs. Your proposed ISSUE-0002::implement is distinct, feasible within your 10h, and improves priority coverage over ISSUE-0001::review, provided no other agent claims it. Please use implement if still available in execution; I’ll avoid the collision.",
+      "blackboard_id": 1
+    },
+    "result": {
+      "event_id": "4b028cdf-8797-4fae-ba3f-498238a9bdf3"
+    },
+    "phase": "planning",
+    "iteration": 1,
+    "planning_round": 3
+  },
+  {
+    "tool_name": "post_message",
+    "agent_name": "Chantell",
+    "arguments": {
+      "message": "Chantell confirms retaining ISSUE-0002::test (5.6h, medium; feasible within 6h, private cost 6.05). Myrle’s possible switch to ISSUE-0002::implement is distinct and feasible given 10h availability, improving priority coverage while preserving all six task claims. I’ll avoid changes unless coordination shifts.",
+      "blackboard_id": 0
+    },
+    "result": {
+      "event_id": "fb444c5c-1474-4254-a53e-78a9edcdf88b"
+    },
+    "phase": "planning",
+    "iteration": 1,
+    "planning_round": 3
+  },
+  {
+    "tool_name": "post_message",
+    "agent_name": "Shari",
+    "arguments": {
+      "message": "Agree with Myrle switching to ISSUE-0002::implement if feasible: that increases priority coverage while retaining six distinct claims. I retain ISSUE-0001::test; no collision with proposed switch. (phase=planning, iter=1)",
+      "blackboard_id": 0
+    },
+    "result": {
+      "event_id": "da00e416-bf15-4d08-b133-fc27b9ed8fa8"
+    },
+    "phase": "planning",
+    "iteration": 1,
+    "planning_round": 4
+  },
+  {
+    "tool_name": "post_message",
+    "agent_name": "Arletha",
+    "arguments": {
+      "message": "Arletha: I retain ISSUE-0002::review (4h, medium; cost 3.93), distinct from the proposed Myrle switch to ISSUE-0002::implement. That switch improves priority coverage while preserving six claims, and I have no objection. Current planned allocation remains collision-free.",
+      "blackboard_id": 0
+    },
+    "result": {
+      "event_id": "bd34c99d-3877-47c0-8893-4242f6035fa2"
+    },
+    "phase": "planning",
+    "iteration": 1,
+    "planning_round": 4
+  },
+  {
+    "tool_name": "post_message",
+    "agent_name": "Wade",
+    "arguments": {
+      "message": "Wade confirms retaining ISSUE-0001::triage: it is feasible and my lowest-cost distinct option (1.15). Myrle’s proposed switch to ISSUE-0002::implement is a good improvement: it preserves six distinct claims and raises the priority mix. Current allocation appears sound; I have no objection.",
+      "blackboard_id": 0
+    },
+    "result": {
+      "event_id": "a59f2397-4295-440f-94e7-61b4228fc578"
+    },
+    "phase": "planning",
+    "iteration": 1,
+    "planning_round": 4
+  },
+  {
+    "tool_name": "post_message",
+    "agent_name": "Myrle",
+    "arguments": {
+      "message": "Myrle update: I plan to switch from ISSUE-0001::review to ISSUE-0002::implement (8h, medium; feasible within my 10h, private cost 9.93). It is distinct from the current planned claims and raises the priority mix while keeping six claims. Others' current plans remain as posted; please flag any conflict.",
+      "blackboard_id": 0
+    },
+    "result": {
+      "event_id": "ee6a8e92-0421-4503-a4fd-6e88a53bac8f"
+    },
+    "phase": "planning",
+    "iteration": 1,
+    "planning_round": 4
+  },
+  {
+    "tool_name": "post_message",
+    "agent_name": "Myrle",
+    "arguments": {
+      "message": "Coalition update: I plan to claim ISSUE-0002::implement (8h, medium; feasible within my 10h, cost 9.93) instead of ISSUE-0001::review. This is distinct from Junko's ISSUE-0001::docs and improves the priority mix while preserving total task count. I’ll retain that choice at execution unless a collision arises.",
+      "blackboard_id": 1
+    },
+    "result": {
+      "event_id": "796abf27-c7b0-4528-917f-e5f5572c9288"
+    },
+    "phase": "planning",
+    "iteration": 1,
+    "planning_round": 4
+  },
+  {
+    "tool_name": "post_message",
+    "agent_name": "Junko",
+    "arguments": {
+      "message": "Junko planning update: I retain ISSUE-0001::docs (cost 1.80, feasible). Myrle's switch to ISSUE-0002::implement is a distinct feasible medium-priority task (8h within 10h), so recommend that over ISSUE-0001::review. Other communicated choices remain distinct; please continue coordinating around that allocation.",
+      "blackboard_id": 0
+    },
+    "result": {
+      "event_id": "df5caf31-240d-48fc-8d4e-96ee52a9b872"
+    },
+    "phase": "planning",
+    "iteration": 1,
+    "planning_round": 4
+  },
+  {
+    "tool_name": "post_message",
+    "agent_name": "Junko",
+    "arguments": {
+      "message": "Coalition planning update: I retain ISSUE-0001::docs (cost 1.80). Myrle's planned ISSUE-0002::implement (8h, medium, feasible) is distinct and improves priority coverage, so I support that rather than the low-priority review. I'll avoid that task.",
+      "blackboard_id": 1
+    },
+    "result": {
+      "event_id": "2a6bad3f-f725-41dc-ac9a-e93c3104119b"
+    },
+    "phase": "planning",
+    "iteration": 1,
+    "planning_round": 4
+  },
+  {
+    "tool_name": "post_message",
+    "agent_name": "Chantell",
+    "arguments": {
+      "message": "Chantell confirms planning choice remains ISSUE-0002::test (5.6h, medium priority; within my 6h availability; private cost 6.05). It remains distinct from Myrle’s ISSUE-0002::implement, Arletha’s ISSUE-0002::review, and the three planned ISSUE-0001 tasks. I will retain this in execution unless coordination changes.",
+      "blackboard_id": 0
+    },
+    "result": {
+      "event_id": "af159883-cc2a-4c69-88eb-af2d27491486"
+    },
+    "phase": "planning",
+    "iteration": 1,
+    "planning_round": 4
+  },
+  {
+    "tool_name": "assign_task",
+    "agent_name": "Shari",
+    "arguments": {
+      "task_id": "ISSUE-0001::test"
+    },
+    "result": {
+      "status": "success",
+      "result": {
+        "agent": "Shari",
+        "task_id": "ISSUE-0001::test",
+        "task": {
+          "id": "ISSUE-0001::test",
+          "issue_id": "ISSUE-0001",
+          "title": "Build backend [test]",
+          "tags": [
+            "backend"
+          ],
+          "priority": "low",
+          "effort": 2.0999999999999996,
+          "work_type": "test"
+        },
+        "total_assigned": 1,
+        "remaining_agents": 5,
+        "joint_reward": 22.97350278683674
+      },
+      "action_committed": true
+    },
+    "phase": "execution",
+    "iteration": 1,
+    "planning_round": null
+  },
+  {
+    "tool_name": "assign_task",
+    "agent_name": "Arletha",
+    "arguments": {
+      "task_id": "ISSUE-0002::review"
+    },
+    "result": {
+      "status": "success",
+      "result": {
+        "agent": "Arletha",
+        "task_id": "ISSUE-0002::review",
+        "task": {
+          "id": "ISSUE-0002::review",
+          "issue_id": "ISSUE-0002",
+          "title": "Improve testing [review]",
+          "tags": [
+            "testing"
+          ],
+          "priority": "medium",
+          "effort": 4.0,
+          "work_type": "review"
+        },
+        "total_assigned": 2,
+        "remaining_agents": 4,
+        "joint_reward": 49.048264434620314
+      },
+      "action_committed": true
+    },
+    "phase": "execution",
+    "iteration": 1,
+    "planning_round": null
+  },
+  {
+    "tool_name": "assign_task",
+    "agent_name": "Wade",
+    "arguments": {
+      "task_id": "ISSUE-0001::triage"
+    },
+    "result": {
+      "status": "success",
+      "result": {
+        "agent": "Wade",
+        "task_id": "ISSUE-0001::triage",
+        "task": {
+          "id": "ISSUE-0001::triage",
+          "issue_id": "ISSUE-0001",
+          "title": "Build backend [triage]",
+          "tags": [
+            "backend"
+          ],
+          "priority": "low",
+          "effort": 1.2000000000000002,
+          "work_type": "triage"
+        },
+        "total_assigned": 3,
+        "remaining_agents": 3,
+        "joint_reward": 72.90041095420165
+      },
+      "action_committed": true
+    },
+    "phase": "execution",
+    "iteration": 1,
+    "planning_round": null
+  },
+  {
+    "tool_name": "assign_task",
+    "agent_name": "Myrle",
+    "arguments": {
+      "task_id": "ISSUE-0002::implement"
+    },
+    "result": {
+      "status": "success",
+      "result": {
+        "agent": "Myrle",
+        "task_id": "ISSUE-0002::implement",
+        "task": {
+          "id": "ISSUE-0002::implement",
+          "issue_id": "ISSUE-0002",
+          "title": "Improve testing [implement]",
+          "tags": [
+            "testing"
+          ],
+          "priority": "medium",
+          "effort": 8.0,
+          "work_type": "implement"
+        },
+        "total_assigned": 4,
+        "remaining_agents": 2,
+        "joint_reward": 92.96654199708377
+      },
+      "action_committed": true
+    },
+    "phase": "execution",
+    "iteration": 1,
+    "planning_round": null
+  },
+  {
+    "tool_name": "assign_task",
+    "agent_name": "Junko",
+    "arguments": {
+      "task_id": "ISSUE-0001::docs"
+    },
+    "result": {
+      "status": "success",
+      "result": {
+        "agent": "Junko",
+        "task_id": "ISSUE-0001::docs",
+        "task": {
+          "id": "ISSUE-0001::docs",
+          "issue_id": "ISSUE-0001",
+          "title": "Build backend [docs]",
+          "tags": [
+            "backend"
+          ],
+          "priority": "low",
+          "effort": 1.5,
+          "work_type": "docs"
+        },
+        "total_assigned": 5,
+        "remaining_agents": 1,
+        "joint_reward": 116.1706318654004
+      },
+      "action_committed": true
+    },
+    "phase": "execution",
+    "iteration": 1,
+    "planning_round": null
+  },
+  {
+    "tool_name": "assign_task",
+    "agent_name": "Chantell",
+    "arguments": {
+      "task_id": "ISSUE-0002::test"
+    },
+    "result": {
+      "status": "success",
+      "result": {
+        "agent": "Chantell",
+        "task_id": "ISSUE-0002::test",
+        "task": {
+          "id": "ISSUE-0002::test",
+          "issue_id": "ISSUE-0002",
+          "title": "Improve testing [test]",
+          "tags": [
+            "testing"
+          ],
+          "priority": "medium",
+          "effort": 5.6,
+          "work_type": "test"
+        },
+        "total_assigned": 6,
+        "remaining_agents": 0,
+        "joint_reward": 140.1223098859511
+      },
+      "action_committed": true
+    },
+    "phase": "execution",
+    "iteration": 1,
+    "planning_round": null
+  }
+]

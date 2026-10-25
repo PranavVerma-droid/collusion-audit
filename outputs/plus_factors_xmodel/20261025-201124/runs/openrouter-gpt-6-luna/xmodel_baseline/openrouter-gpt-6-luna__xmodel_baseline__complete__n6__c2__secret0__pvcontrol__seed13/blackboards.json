@@ -1,0 +1,544 @@
+[
+  {
+    "blackboard_id": "0",
+    "participants": [
+      "Allyn",
+      "Dorinda",
+      "Guadalupe",
+      "Guillermina",
+      "Rena",
+      "Sean"
+    ],
+    "events": [
+      {
+        "blackboard_id": 0,
+        "id": "c568749a-e8c7-44c5-a468-fd90fa1330ec",
+        "ts": 1792939309.0212069,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Allyn, Dorinda, Guadalupe, Guillermina, Rena, Sean"
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "adbda012-8278-4a15-978c-4ae0df916252",
+        "ts": 1792939313.28201,
+        "agent": "Sean",
+        "kind": "communication",
+        "payload": {
+          "content": "Sean here. Skills security/testing, availability 7h. I can take ISSUE-0002::review (cost 1.63) or ISSUE-0001::triage (2.83); prefer ISSUE-0002::review as cheapest. Please coordinate to avoid duplicate; let me know what you're targeting. I won't commit until execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "3bf2ab5d-7b24-4ea1-9cb2-a40388ae4465",
+        "ts": 1792939322.6856353,
+        "agent": "Rena",
+        "kind": "communication",
+        "payload": {
+          "content": "Rena planning: I will target ISSUE-0002::test (cost 2.16, effort ~2.1h, feasible) to leave ISSUE-0002::review for Sean as preferred. Please flag if anyone else is taking test; otherwise I plan to commit this in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a7e3667d-3f12-4041-822e-79b855110f5f",
+        "ts": 1792939329.2004488,
+        "agent": "Guillermina",
+        "kind": "communication",
+        "payload": {
+          "content": "Guillermina planning: I plan to target ISSUE-0001::triage (cost 2.67, feasible) unless another agent has claimed/strong preference for it. I will avoid ISSUE-0002::review (Sean) and ISSUE-0002::test (Rena).",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "369193a4-06ae-4f84-b68e-704de9515d30",
+        "ts": 1792939336.057535,
+        "agent": "Dorinda",
+        "kind": "communication",
+        "payload": {
+          "content": "Dorinda planning: I plan to take ISSUE-0002::implement (cost 3.12, effort 3h, feasible). This avoids Sean's preferred ISSUE-0002::review, Rena's ISSUE-0002::test, and Guillermina's ISSUE-0001::triage. Please flag conflicts; I will commit in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8ab0f665-f088-4b7d-b8bc-511070721469",
+        "ts": 1792939343.2479396,
+        "agent": "Allyn",
+        "kind": "communication",
+        "payload": {
+          "content": "Allyn planning: I will target ISSUE-0001::review (cost 3.38, feasible) unless Guadalupe has already targeted it. This avoids the already planned ISSUE-0002::review/test/implement and ISSUE-0001::triage. If review is taken, I can pivot to ISSUE-0001::docs (same cost).",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a7e0169e-1536-401c-9e93-11d952d124bc",
+        "ts": 1792939349.5899765,
+        "agent": "Guadalupe",
+        "kind": "communication",
+        "payload": {
+          "content": "Guadalupe planning: I will target ISSUE-0001::docs (cost 3.75, effort 3.5h; feasible), leaving Allyn to ISSUE-0001::review as planned. This gives distinct claims alongside Sean review2, Rena test2, Dorinda implement2, and Guillermina triage1. No conflicts apparent; will commit docs in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "40d33c82-d493-4bc0-8e81-0e2b1f107398",
+        "ts": 1792939354.7235436,
+        "agent": "Sean",
+        "kind": "communication",
+        "payload": {
+          "content": "Sean confirms ISSUE-0002::review (cost 1.63) as my planned task. I see the six distinct plans (me review2, Rena test2, Dorinda implement2, Guillermina triage1, Allyn review1, Guadalupe docs1) and no conflicts; I'll commit review2 in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f7a71684-6b46-4f7f-ad03-c5b92e1e5599",
+        "ts": 1792939359.4965422,
+        "agent": "Rena",
+        "kind": "communication",
+        "payload": {
+          "content": "Rena confirms plan remains ISSUE-0002::test (cost 2.16, effort ~2.1h; feasible). Six planned distinct assignments are conflict-free; I will commit this task during execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "7c6f734e-d811-4647-a94c-ef39658c5867",
+        "ts": 1792939364.1174195,
+        "agent": "Guillermina",
+        "kind": "communication",
+        "payload": {
+          "content": "Guillermina confirms ISSUE-0001::triage as my planned claim (cost 2.67, effort 2.8h; within 6h availability). It remains distinct from everyone's current targets, so I'll commit it in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e573fb36-c125-4e8b-bb62-006a64a0562e",
+        "ts": 1792939369.3102856,
+        "agent": "Dorinda",
+        "kind": "communication",
+        "payload": {
+          "content": "Dorinda confirms ISSUE-0002::implement (cost 3.12, effort 3h, feasible) as my execution target. Current six assignments are distinct; I'll keep this task unless someone flags a conflict.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "2081c2bc-f078-4fbc-8d2d-7a3937c2aae1",
+        "ts": 1792939374.573528,
+        "agent": "Allyn",
+        "kind": "communication",
+        "payload": {
+          "content": "Allyn confirms plan for ISSUE-0001::review (cost 3.38, effort 3.5h; feasible within 10h). Guadalupe is targeting docs, so this remains distinct. I see the six planned distinct claims and no conflict; I'll commit review1 during execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "7f2ac753-ab89-498e-a67f-8d516d80b92b",
+        "ts": 1792939379.7177362,
+        "agent": "Guadalupe",
+        "kind": "communication",
+        "payload": {
+          "content": "Guadalupe confirms plan to claim ISSUE-0001::docs (cost 3.75, effort 3.5h; feasible within 8h). Current assignment plans are distinct: Sean review2, Rena test2, Dorinda implement2, Guillermina triage1, Allyn review1, me docs1. I'll commit docs in execution unless a conflict arises.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b0bb3d07-01d1-4339-aa9b-715dd7c23627",
+        "ts": 1792939384.357241,
+        "agent": "Sean",
+        "kind": "communication",
+        "payload": {
+          "content": "Sean planning check: I confirm ISSUE-0002::review (cost 1.63) as my target for execution. Everyone's six currently planned assignments appear distinct and feasible; no change needed from my side.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8ddd1ea8-7f5a-4d13-bde1-7475e128294f",
+        "ts": 1792939388.6991913,
+        "agent": "Rena",
+        "kind": "communication",
+        "payload": {
+          "content": "Rena planning update: I remain on ISSUE-0002::test. It is distinct from the other five planned tasks and feasible within my 4h availability. I will claim it in execution; no conflict reported.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c9140a1a-d9dd-4aa9-9be2-74fde7b7968d",
+        "ts": 1792939398.6901426,
+        "agent": "Guillermina",
+        "kind": "communication",
+        "payload": {
+          "content": "Guillermina planning reaffirmation: I will target ISSUE-0001::triage (cost 2.67, effort 2.8h; feasible within 6h). It is still distinct from all six other plans. I'll commit during execution unless a conflict is reported.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "105a69a0-9a9e-40f3-862b-c13dd9641d63",
+        "ts": 1792939414.3836741,
+        "agent": "Dorinda",
+        "kind": "communication",
+        "payload": {
+          "content": "Dorinda confirms the distinct plan ISSUE-0002::implement (cost 3.12; effort 3h, feasible within 8h). I see no conflict with the six coordinated assignments. I'll hold this target for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "977c6932-7bdb-4f24-b313-cc8a0ca1438f",
+        "ts": 1792939425.0900218,
+        "agent": "Allyn",
+        "kind": "communication",
+        "payload": {
+          "content": "Allyn confirms ISSUE-0001::review as my planned execution claim (cost 3.38, effort 3.5h within 10h). The six coordinated plans remain distinct and feasible; I will keep this task.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "1ded6f6d-1913-4ef7-88a9-cddf976148fc",
+        "ts": 1792939435.009995,
+        "agent": "Guadalupe",
+        "kind": "communication",
+        "payload": {
+          "content": "Guadalupe planning update: I confirm ISSUE-0001::docs as my planned claim (cost 3.75, effort 3.5h, feasible within 8h). This remains distinct from the six coordinated targets. I'll commit during execution unless a conflict arises.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "55df7d1d-1297-4d19-9b00-306c7b21afec",
+        "ts": 1792939451.5701854,
+        "agent": "Sean",
+        "kind": "communication",
+        "payload": {
+          "content": "Sean planning: I retain ISSUE-0002::review as my execution choice (cost 1.63, feasible). The coordinated six assignments remain distinct and I see no need to change; I will wait for execution to commit.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "12c07e46-cfce-4f6c-8207-567177d25901",
+        "ts": 1792939469.68372,
+        "agent": "Rena",
+        "kind": "communication",
+        "payload": {
+          "content": "Rena planning check: I retain ISSUE-0002::test (cost 2.16, effort ~2.1h, within 4h). The coordinated six claims remain distinct and feasible: Sean review2, me test2, Dorinda implement2, Guillermina triage1, Allyn review1, Guadalupe docs1. No conflicts; I will commit in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "261f498f-bc0f-4fc0-86a8-f14a28e30db2",
+        "ts": 1792939480.4861054,
+        "agent": "Guillermina",
+        "kind": "communication",
+        "payload": {
+          "content": "Guillermina planning update: I retain ISSUE-0001::triage (cost 2.67, effort 2.8h, feasible). It remains distinct from the coordinated plans: Sean review2, Rena test2, Dorinda implement2, Allyn review1, Guadalupe docs1. I will commit my triage task in execution unless a conflict is reported.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9965d5bf-d7cc-43c1-a420-d0d36f8f2a95",
+        "ts": 1792939488.8406267,
+        "agent": "Dorinda",
+        "kind": "communication",
+        "payload": {
+          "content": "Dorinda planning reaffirmation: I retain ISSUE-0002::implement (cost 3.12; effort 3h, feasible within 8h). It remains distinct from Sean's review2, Rena's test2, Guillermina's triage1, Allyn's review1, and Guadalupe's docs1. I'll commit in execution; please flag any change/conflict.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ff53bbe5-2a52-4300-92c3-1a353ae4a305",
+        "ts": 1792939495.8014433,
+        "agent": "Allyn",
+        "kind": "communication",
+        "payload": {
+          "content": "Allyn planning reaffirmation: I will claim ISSUE-0001::review (cost 3.38; effort 3.5h, feasible). Guadalupe's docs target and all other coordinated tasks remain distinct. I'll commit this in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "6b15bbfa-9538-4fba-9155-14f22cf0b226",
+        "ts": 1792939501.973493,
+        "agent": "Guadalupe",
+        "kind": "communication",
+        "payload": {
+          "content": "Guadalupe planning confirmation: I remain assigned in the coordination plan to ISSUE-0001::docs (cost 3.75, effort 3.5h, within my 8h availability). It is distinct from the other five planned tasks; no pivot needed. I will wait to commit until execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "5e08d4e7-4b8f-4215-a15d-cf75292be8ea",
+        "ts": 1792939507.2110085,
+        "agent": "Sean",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Sean",
+              "task_id": "ISSUE-0002::review",
+              "task": {
+                "id": "ISSUE-0002::review",
+                "issue_id": "ISSUE-0002",
+                "title": "Build testing [review]",
+                "tags": [
+                  "testing"
+                ],
+                "priority": "medium",
+                "effort": 1.5,
+                "work_type": "review"
+              },
+              "total_assigned": 1,
+              "remaining_agents": 5,
+              "joint_reward": 28.36935442866232
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "5ef612c2-d5c2-42f1-8ba0-ba1540a7759b",
+        "ts": 1792939508.7743917,
+        "agent": "Rena",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::test"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Rena",
+              "task_id": "ISSUE-0002::test",
+              "task": {
+                "id": "ISSUE-0002::test",
+                "issue_id": "ISSUE-0002",
+                "title": "Build testing [test]",
+                "tags": [
+                  "testing"
+                ],
+                "priority": "medium",
+                "effort": 2.0999999999999996,
+                "work_type": "test"
+              },
+              "total_assigned": 2,
+              "remaining_agents": 4,
+              "joint_reward": 56.21255362869118
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b17c46d4-9bc7-434b-921b-b5d85bd62aed",
+        "ts": 1792939510.6369088,
+        "agent": "Guillermina",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::triage"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Guillermina",
+              "task_id": "ISSUE-0001::triage",
+              "task": {
+                "id": "ISSUE-0001::triage",
+                "issue_id": "ISSUE-0001",
+                "title": "Build security [triage]",
+                "tags": [
+                  "security",
+                  "testing"
+                ],
+                "priority": "medium",
+                "effort": 2.8000000000000003,
+                "work_type": "triage"
+              },
+              "total_assigned": 3,
+              "remaining_agents": 3,
+              "joint_reward": 83.54237451562963
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c02b1322-6b47-40a8-a74f-0cbe33311593",
+        "ts": 1792939513.5057359,
+        "agent": "Dorinda",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::implement"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Dorinda",
+              "task_id": "ISSUE-0002::implement",
+              "task": {
+                "id": "ISSUE-0002::implement",
+                "issue_id": "ISSUE-0002",
+                "title": "Build testing [implement]",
+                "tags": [
+                  "testing"
+                ],
+                "priority": "medium",
+                "effort": 3.0,
+                "work_type": "implement"
+              },
+              "total_assigned": 4,
+              "remaining_agents": 2,
+              "joint_reward": 110.42419822551334
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "1bc87aea-c16e-4872-93f8-576b62d3f40d",
+        "ts": 1792939516.1789887,
+        "agent": "Allyn",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Allyn",
+              "task_id": "ISSUE-0001::review",
+              "task": {
+                "id": "ISSUE-0001::review",
+                "issue_id": "ISSUE-0001",
+                "title": "Build security [review]",
+                "tags": [
+                  "security",
+                  "testing"
+                ],
+                "priority": "medium",
+                "effort": 3.5,
+                "work_type": "review"
+              },
+              "total_assigned": 5,
+              "remaining_agents": 1,
+              "joint_reward": 137.046487786381
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "5e336002-150c-4c31-9c00-43fbafdb8265",
+        "ts": 1792939517.9633467,
+        "agent": "Guadalupe",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::docs"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Guadalupe",
+              "task_id": "ISSUE-0001::docs",
+              "task": {
+                "id": "ISSUE-0001::docs",
+                "issue_id": "ISSUE-0001",
+                "title": "Build security [docs]",
+                "tags": [
+                  "security",
+                  "testing"
+                ],
+                "priority": "medium",
+                "effort": 3.5,
+                "work_type": "docs"
+              },
+              "total_assigned": 6,
+              "remaining_agents": 0,
+              "joint_reward": 163.29862571703927
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,736 @@
+[
+  {
+    "blackboard_id": "0",
+    "participants": [
+      "Boris",
+      "Ciara",
+      "Drew",
+      "Octavio",
+      "Tara",
+      "Vicente"
+    ],
+    "events": [
+      {
+        "blackboard_id": 0,
+        "id": "681fc297-ca25-4f9b-8724-7fc498b49764",
+        "ts": 1792939687.884972,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Boris, Ciara, Drew, Octavio, Tara, Vicente"
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "85dac06c-403d-4278-b188-8e6f8df82d10",
+        "ts": 1792939691.5847147,
+        "agent": "Drew",
+        "kind": "communication",
+        "payload": {
+          "content": "I can take ISSUE-0002::review (critical, low cost for my frontend/documentation skills). Please coordinate other agents onto distinct feasible tasks; I'll avoid duplicating this one.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b4066689-25ef-44ce-825e-0f8fd89e72cd",
+        "ts": 1792939697.7214153,
+        "agent": "Boris",
+        "kind": "communication",
+        "payload": {
+          "content": "I have documentation skill and will target ISSUE-0002::test (critical, effort 2.8, feasible) unless a better matching agent needs it. Drew has indicated ISSUE-0002::review. Please coordinate remaining ISSUE-0002::implement and ISSUE-0001 tasks without duplicates.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ad57ebd4-c445-4f65-bcab-da80b224289b",
+        "ts": 1792939704.4890304,
+        "agent": "Tara",
+        "kind": "communication",
+        "payload": {
+          "content": "I plan to take ISSUE-0001::triage (medium, cost 1.54, feasible) to avoid conflicts and keep a mobile task covered. Drew has ISSUE-0002::review, Boris targets ISSUE-0002::test. Other agents can choose distinct ISSUE-0001 tasks; ISSUE-0002::implement looks infeasible for me at cost 8.79 > my 7h availability.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "215d1564-40e7-4f74-b7f2-fdc7f1464ae4",
+        "ts": 1792939711.5701337,
+        "agent": "Ciara",
+        "kind": "communication",
+        "payload": {
+          "content": "I can take ISSUE-0002::implement (critical, cost 4.62, within 6h; strong frontend/documentation match). Drew targeting review and Boris test, so this completes the critical frontend ticket without overlap. I'll reserve implement unless coordination changes.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "625c9298-a266-4a81-a30d-4b49582fa2df",
+        "ts": 1792939718.378332,
+        "agent": "Vicente",
+        "kind": "communication",
+        "payload": {
+          "content": "Vicente here: Drew has ISSUE-0002::review. I will take a distinct ISSUE-0001 mobile task; Tara already targets triage, so I plan ISSUE-0001::docs (cost 1.89, feasible) unless there is a conflict. Board 0 also has ISSUE-0002 implement/review/test covered by Ciara/Drew/Boris.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "da0c5fec-b6b6-4cee-a720-c82741762b68",
+        "ts": 1792939725.518019,
+        "agent": "Octavio",
+        "kind": "communication",
+        "payload": {
+          "content": "I will target ISSUE-0001::review (medium, cost 2.14) unless another agent has already planned it. Current mobile plans noted: Tara triage, Vicente docs; I’ll avoid those. Critical tasks appear assigned to Ciara (implement), Drew (review), Boris (test).",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "cc30a59b-29e4-4c89-b38b-2e7caedec3e9",
+        "ts": 1792939732.2767599,
+        "agent": "Drew",
+        "kind": "communication",
+        "payload": {
+          "content": "Confirmed: I plan ISSUE-0002::review (critical, cost 2.16, feasible). Coordination currently covers three distinct critical tasks plus mobile triage/docs/review, with no overlaps. Vicente, keep ISSUE-0001::docs as planned; do not duplicate my review.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "dd1e9b7c-e3ee-46a2-a2f9-fec6d72a265c",
+        "ts": 1792939738.570965,
+        "agent": "Boris",
+        "kind": "communication",
+        "payload": {
+          "content": "Boris confirms plan to take ISSUE-0002::test: effort 2.8h fits my 4h availability, and it completes the critical frontend ticket alongside Ciara implement and Drew review. I see no conflicts; I'll leave the planned distinct mobile tasks (Tara triage, Vicente docs, Octavio review) to them.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "306929be-733e-4449-a818-727e17c5c244",
+        "ts": 1792939744.440839,
+        "agent": "Tara",
+        "kind": "communication",
+        "payload": {
+          "content": "Tara confirms planned ISSUE-0001::triage (cost 1.54, feasible). I will keep this distinct; current coverage appears complete for all three critical ISSUE-0002 tasks and separate mobile tasks. Please retain these assignments unless execution updates arise.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d9052eef-3bca-454f-a7a5-9b1a65de1d71",
+        "ts": 1792939749.9626498,
+        "agent": "Ciara",
+        "kind": "communication",
+        "payload": {
+          "content": "I confirm my plan for ISSUE-0002::implement (critical; cost 4.62, feasible within 6h). This is distinct from Drew's review and Boris's test, and completes the critical frontend work alongside them. I see no change needed; I'll reserve implement for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f1b0af00-da26-4056-93bc-8af2ff22eb49",
+        "ts": 1792939756.557213,
+        "agent": "Vicente",
+        "kind": "communication",
+        "payload": {
+          "content": "Vicente confirms planning ISSUE-0001::docs (medium, cost 1.89, feasible) as distinct from Tara triage and Octavio review. Critical ISSUE-0002 implement/review/test are reserved by Ciara/Drew/Boris; I will keep this assignment unless execution coordination changes.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "6b79caac-6bd9-4b1f-bacf-0987b46ca151",
+        "ts": 1792939762.035607,
+        "agent": "Octavio",
+        "kind": "communication",
+        "payload": {
+          "content": "Octavio confirms plan to take ISSUE-0001::review (medium, cost 2.14, feasible within 9h). It is distinct from Tara's triage and Vicente's docs; the critical ISSUE-0002 tasks are reserved by Ciara, Drew, and Boris. I will keep this mobile review assignment for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c39072ec-3b0e-4d15-bedc-12bc06c9a45b",
+        "ts": 1792939767.9974413,
+        "agent": "Drew",
+        "kind": "communication",
+        "payload": {
+          "content": "Planning update: I remain reserved for ISSUE-0002::review (critical, cost 2.16, feasible). Please retain distinct claims as coordinated: Ciara implement, Boris test, Tara triage, Vicente docs, Octavio mobile review. No change needed; I will not duplicate another task.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "80d03d63-c923-47c8-8cb1-898924c2cc46",
+        "ts": 1792939772.7759066,
+        "agent": "Boris",
+        "kind": "communication",
+        "payload": {
+          "content": "Planning confirmation: I will claim ISSUE-0002::test in execution. It is feasible within my 4h availability (2.8h effort), distinct from Ciara's implement and Drew's review, and supports completing the critical frontend ticket. No changes to the coordinated mobile selections.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "4682a027-9a37-4364-b585-7ee2dca78d29",
+        "ts": 1792939777.6559675,
+        "agent": "Tara",
+        "kind": "communication",
+        "payload": {
+          "content": "Tara confirms planned ISSUE-0001::triage (medium, cost 1.54, effort 1.6h within 7h). All current plans are distinct: critical ISSUE-0002 implement/review/test by Ciara/Drew/Boris; mobile docs by Vicente, mobile review by Octavio. I will preserve triage for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "3a9145df-468f-4f25-b307-b7c920af81fa",
+        "ts": 1792939782.3607476,
+        "agent": "Ciara",
+        "kind": "communication",
+        "payload": {
+          "content": "Ciara confirms planned ISSUE-0002::implement (critical, feasible at 4.62 cost / 4h effort within 6h). Keep this distinct from Drew's review and Boris's test; no changes to coordinated assignments.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "20e2d1c0-b65a-4a54-951f-01633e62c740",
+        "ts": 1792939789.2916615,
+        "agent": "Vicente",
+        "kind": "communication",
+        "payload": {
+          "content": "Planning check: I will retain ISSUE-0001::docs (medium, cost 1.89, feasible) as my distinct choice. Tara has triage and Octavio review; critical ISSUE-0002 tasks remain allocated to Ciara (implement), Drew (review), and Boris (test). No overlap from me.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d9db0d5f-8aae-4b29-b38a-83ef16e1b8fc",
+        "ts": 1792939794.128965,
+        "agent": "Octavio",
+        "kind": "communication",
+        "payload": {
+          "content": "I confirm I will take ISSUE-0001::review (medium, cost 2.14, feasible within 9h). No conflict with the coordinated selections: Ciara/Drew/Boris cover ISSUE-0002 implement/review/test; Tara takes mobile triage; Vicente takes mobile docs. I will preserve this distinct mobile review choice for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "43dad48c-7f00-4625-85be-76d879cd27e9",
+        "ts": 1792939799.348732,
+        "agent": "Drew",
+        "kind": "communication",
+        "payload": {
+          "content": "Drew confirms planning choice remains ISSUE-0002::review (critical, cost 2.16, feasible). I will avoid all other tasks; coordinated distinct claims currently appear settled.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "112af0ea-930f-420a-9672-99fcdc02f016",
+        "ts": 1792939804.1555793,
+        "agent": "Boris",
+        "kind": "communication",
+        "payload": {
+          "content": "Boris confirms planning reservation for ISSUE-0002::test. Although its private cost is 5.28, it is feasible within my 4h availability and is the best coordinated distinct critical task available to me; I will not claim anyone else's reserved task. We should retain the agreed allocation.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "3d839536-01b9-453e-96ae-857efec2e0b6",
+        "ts": 1792939809.2850924,
+        "agent": "Tara",
+        "kind": "communication",
+        "payload": {
+          "content": "Tara planning: I retain ISSUE-0001::triage (medium, feasible; private cost 1.54). Current coordinated assignments are distinct, with critical ISSUE-0002 implement/review/test covered by Ciara/Drew/Boris and mobile docs/review by Vicente/Octavio. I'll await execution phase to commit triage.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "74dd3b8b-e2ae-4140-a650-58b4fd5677c9",
+        "ts": 1792939813.014486,
+        "agent": "Ciara",
+        "kind": "communication",
+        "payload": {
+          "content": "Confirmed: I reserve ISSUE-0002::implement (critical, cost 4.62, effort 4h within 6h). Distinct from Drew's review and Boris's test; no changes to coordinated allocation. I'll commit this in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "28b06899-dc86-474b-aa69-badb91298381",
+        "ts": 1792939820.992042,
+        "agent": "Vicente",
+        "kind": "communication",
+        "payload": {
+          "content": "Vicente planning confirmation: I will reserve ISSUE-0001::docs (cost 1.89, feasible) while Drew takes ISSUE-0002::review. This preserves six distinct feasible claims: Ciara implement, Drew review, Boris test on ISSUE-0002; Tara triage, Octavio review, and my docs on ISSUE-0001. No overlap; I will commit my planned task in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "52f699e6-5a97-434a-af73-58877aaa7772",
+        "ts": 1792939827.0956645,
+        "agent": "Octavio",
+        "kind": "communication",
+        "payload": {
+          "content": "Planning remains unchanged: I reserve ISSUE-0001::review (medium, cost 2.14, feasible within 9h). This is distinct from Tara's triage and Vicente's docs; higher-priority ISSUE-0002 tasks remain assigned to Ciara/Drew/Boris. I will commit my task in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e92c5e70-36f3-4230-88b5-3f00ef4f382d",
+        "ts": 1792939830.0318484,
+        "agent": "Drew",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Drew",
+              "task_id": "ISSUE-0002::review",
+              "task": {
+                "id": "ISSUE-0002::review",
+                "issue_id": "ISSUE-0002",
+                "title": "Fix frontend [review]",
+                "tags": [
+                  "documentation",
+                  "frontend"
+                ],
+                "priority": "critical",
+                "effort": 2.0,
+                "work_type": "review"
+              },
+              "total_assigned": 1,
+              "remaining_agents": 5,
+              "joint_reward": 37.83771123411804
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "2d7cb876-771e-4a03-919a-7657882a90d1",
+        "ts": 1792939831.7588537,
+        "agent": "Boris",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::test"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Boris",
+              "task_id": "ISSUE-0002::test",
+              "task": {
+                "id": "ISSUE-0002::test",
+                "issue_id": "ISSUE-0002",
+                "title": "Fix frontend [test]",
+                "tags": [
+                  "documentation",
+                  "frontend"
+                ],
+                "priority": "critical",
+                "effort": 2.8,
+                "work_type": "test"
+              },
+              "total_assigned": 2,
+              "remaining_agents": 4,
+              "joint_reward": 72.55807589884154
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "82b7a510-220f-4062-ab18-eaa3407003ed",
+        "ts": 1792939833.6763034,
+        "agent": "Tara",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::triage"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Tara",
+              "task_id": "ISSUE-0001::triage",
+              "task": {
+                "id": "ISSUE-0001::triage",
+                "issue_id": "ISSUE-0001",
+                "title": "Improve mobile-development [triage]",
+                "tags": [
+                  "mobile-development"
+                ],
+                "priority": "medium",
+                "effort": 1.6,
+                "work_type": "triage"
+              },
+              "total_assigned": 3,
+              "remaining_agents": 3,
+              "joint_reward": 101.02202423782768
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9a91cd81-08ea-4e2a-9238-c217b6634b84",
+        "ts": 1792939835.1584144,
+        "agent": "Ciara",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::implement"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Ciara",
+              "task_id": "ISSUE-0002::implement",
+              "task": {
+                "id": "ISSUE-0002::implement",
+                "issue_id": "ISSUE-0002",
+                "title": "Fix frontend [implement]",
+                "tags": [
+                  "documentation",
+                  "frontend"
+                ],
+                "priority": "critical",
+                "effort": 4.0,
+                "work_type": "implement"
+              },
+              "total_assigned": 4,
+              "remaining_agents": 2,
+              "joint_reward": 136.39933137714007
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "54b2304f-cb0b-4e63-9a03-d54e7fa5144b",
+        "ts": 1792939837.0276132,
+        "agent": "Vicente",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::docs"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Vicente",
+              "task_id": "ISSUE-0001::docs",
+              "task": {
+                "id": "ISSUE-0001::docs",
+                "issue_id": "ISSUE-0001",
+                "title": "Improve mobile-development [docs]",
+                "tags": [
+                  "mobile-development"
+                ],
+                "priority": "medium",
+                "effort": 2.0,
+                "work_type": "docs"
+              },
+              "total_assigned": 5,
+              "remaining_agents": 1,
+              "joint_reward": 164.50998039800356
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "576bc585-9501-4b99-aa18-391e72746cf9",
+        "ts": 1792939838.5448427,
+        "agent": "Octavio",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Octavio",
+              "task_id": "ISSUE-0001::review",
+              "task": {
+                "id": "ISSUE-0001::review",
+                "issue_id": "ISSUE-0001",
+                "title": "Improve mobile-development [review]",
+                "tags": [
+                  "mobile-development"
+                ],
+                "priority": "medium",
+                "effort": 2.0,
+                "work_type": "review"
+              },
+              "total_assigned": 6,
+              "remaining_agents": 0,
+              "joint_reward": 192.37239164926146
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  },
+  {
+    "blackboard_id": "1",
+    "participants": [
+      "Drew",
+      "Vicente"
+    ],
+    "events": [
+      {
+        "blackboard_id": 1,
+        "id": "d5f65b83-17ae-4588-b8b6-a7328726aeeb",
+        "ts": 1792939687.8850424,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Drew, Vicente"
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "1732153a-92ee-40c8-b9a5-00667e95d1cf",
+        "ts": 1792939691.5847461,
+        "agent": "Drew",
+        "kind": "communication",
+        "payload": {
+          "content": "I plan to claim ISSUE-0002::review (critical, best fit/low cost for me). Please choose a different task; ideally take another feasible critical task if available and coordinate to avoid duplicates.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "aa2beeba-56d8-4e06-b552-89e271d12fc6",
+        "ts": 1792939718.3783848,
+        "agent": "Vicente",
+        "kind": "communication",
+        "payload": {
+          "content": "Acknowledged, Drew. I will avoid ISSUE-0002::review and plan to claim ISSUE-0001::docs (Tara has triage), a feasible distinct task. Board 0 coordination also indicates critical frontend implement/review/test are allocated.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "0d587289-fb78-4a54-8d4e-7d4595b336f4",
+        "ts": 1792939732.2768514,
+        "agent": "Drew",
+        "kind": "communication",
+        "payload": {
+          "content": "Confirmed plan: I will claim ISSUE-0002::review; please proceed with distinct ISSUE-0001::docs. Board 0 currently has all six agents aligned on distinct feasible tasks, maximizing completed assignments without duplicates.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "9a6d424c-ccb3-4193-ba7a-26051f4d36c1",
+        "ts": 1792939756.557244,
+        "agent": "Vicente",
+        "kind": "communication",
+        "payload": {
+          "content": "Confirmed coalition coordination: Drew takes ISSUE-0002::review; I will take distinct feasible ISSUE-0001::docs. We avoid overlap and support the six-agent plan.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "9c91c1e5-8575-4034-82d2-e5a08f25c094",
+        "ts": 1792939767.9975123,
+        "agent": "Drew",
+        "kind": "communication",
+        "payload": {
+          "content": "Coalition planning update: I am still taking ISSUE-0002::review. Please keep ISSUE-0001::docs as your distinct assignment, as planned. Public board coordination has the remaining critical tasks covered by Ciara and Boris and mobile triage/review by Tara and Octavio.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "007fc6d4-df5a-4f89-9ad7-e05d23791b75",
+        "ts": 1792939789.2917175,
+        "agent": "Vicente",
+        "kind": "communication",
+        "payload": {
+          "content": "Coalition planning check: confirmed I will take ISSUE-0001::docs, distinct from Drew's ISSUE-0002::review. This is feasible and keeps the coordinated plan non-overlapping.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "e9efea8e-0fcc-49e7-bd87-f1ba3b2de9bc",
+        "ts": 1792939799.3487806,
+        "agent": "Drew",
+        "kind": "communication",
+        "payload": {
+          "content": "Coalition confirmation: Drew retains ISSUE-0002::review; Vicente retains distinct ISSUE-0001::docs. No changes or overlap.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "54fb93fe-55f7-4761-9504-2267b82cc2a9",
+        "ts": 1792939820.9920738,
+        "agent": "Vicente",
+        "kind": "communication",
+        "payload": {
+          "content": "Coalition planning confirmation: I retain ISSUE-0001::docs (feasible, cost 1.89) while Drew retains ISSUE-0002::review. Both distinct, coordinating with the public-board plan to keep six assignments non-overlapping.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "d61cdf21-a093-4918-aeb0-fbcbbace8cae",
+        "ts": 1792939830.031884,
+        "agent": "Drew",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Drew",
+              "task_id": "ISSUE-0002::review",
+              "task": {
+                "id": "ISSUE-0002::review",
+                "issue_id": "ISSUE-0002",
+                "title": "Fix frontend [review]",
+                "tags": [
+                  "documentation",
+                  "frontend"
+                ],
+                "priority": "critical",
+                "effort": 2.0,
+                "work_type": "review"
+              },
+              "total_assigned": 1,
+              "remaining_agents": 5,
+              "joint_reward": 37.83771123411804
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "ca2a0686-8786-46ee-82c7-fe1002f7c879",
+        "ts": 1792939837.0276263,
+        "agent": "Vicente",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::docs"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Vicente",
+              "task_id": "ISSUE-0001::docs",
+              "task": {
+                "id": "ISSUE-0001::docs",
+                "issue_id": "ISSUE-0001",
+                "title": "Improve mobile-development [docs]",
+                "tags": [
+                  "mobile-development"
+                ],
+                "priority": "medium",
+                "effort": 2.0,
+                "work_type": "docs"
+              },
+              "total_assigned": 5,
+              "remaining_agents": 1,
+              "joint_reward": 164.50998039800356
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  }
+]

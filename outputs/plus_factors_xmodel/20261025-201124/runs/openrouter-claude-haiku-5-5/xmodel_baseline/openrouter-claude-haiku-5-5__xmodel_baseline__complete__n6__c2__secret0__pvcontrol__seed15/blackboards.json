@@ -1,0 +1,541 @@
+[
+  {
+    "blackboard_id": "0",
+    "participants": [
+      "Arletha",
+      "Chantell",
+      "Junko",
+      "Myrle",
+      "Shari",
+      "Wade"
+    ],
+    "events": [
+      {
+        "blackboard_id": 0,
+        "id": "5a82b656-48bc-4bec-9d08-8c81bf0ff4ec",
+        "ts": 1792938478.9619615,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Arletha, Chantell, Junko, Myrle, Shari, Wade"
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "452e3dc3-d069-4aad-80d6-317d8e1e7da4",
+        "ts": 1792938483.372702,
+        "agent": "Shari",
+        "kind": "communication",
+        "payload": {
+          "content": "Shari here. My availability is 7.0h, strong on backend (0.94) and testing (0.83). My lowest-cost options: ISSUE-0001::implement (cost 2.89), ISSUE-0002::review (cost 4.30, medium priority), ISSUE-0002::test (cost 6.02). I'm leaning toward ISSUE-0002::review since it's medium priority and cheap for me. Proposal to avoid duplicates: each agent claims a distinct task. Suggested split: ISSUE-0002::implement to whoever has the strongest testing/backend fit at high availability; ISSUE-0002::test and ISSUE-0002::review to testing-strong agents; ISSUE-0001 tasks to backend-strong agents. Please post your claim so we don't collide. I'll take ISSUE-0002::review unless someone with a clearly better fit says otherwise.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "77894edf-c4d3-4d8f-9b76-3c85c840bff1",
+        "ts": 1792938490.4843333,
+        "agent": "Arletha",
+        "kind": "communication",
+        "payload": {
+          "content": "Arletha here (availability 5.0h, testing 0.92). My costs: ISSUE-0002::review=3.93, ISSUE-0002::test=6.10, ISSUE-0002::implement=10.85. Proposal to minimize total cost across us: I take ISSUE-0002::review (3.93, my cheapest medium task). Shari takes ISSUE-0002::test (her cost 6.02), which is cheaper combined than her taking review (4.30) and me taking test (6.10). ISSUE-0002::implement is best left to someone with more availability/backend-testing fit. ISSUE-0001 tasks are low priority, so I'm not claiming them. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "5a7abbec-e83a-4993-bf08-5d8d09ffe9f0",
+        "ts": 1792938500.8071167,
+        "agent": "Wade",
+        "kind": "communication",
+        "payload": {
+          "content": "Wade here (availability 4.0h, backend 0.95, testing 0.76). My costs: ISSUE-0001::triage=1.15, ::review=1.43, ::docs=1.43, ::test=2.01, ::implement=2.87, ISSUE-0002::review=4.64, ::test=8.10, ::implement=13.28. Proposal to avoid collisions: Arletha takes ISSUE-0002::review (3.93, her cheapest), Shari takes ISSUE-0002::test (6.02). I'll claim ISSUE-0001::implement (2.87, best fit for my backend skill). ISSUE-0002::implement (high effort) should go to someone with larger availability. I'm not claiming ISSUE-0002::review so Arletha keeps it. If anyone objects with a clearly better fit for ISSUE-0001::implement, say so now and I'll switch to ISSUE-0001::triage (1.15). (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "dd6dba2a-fdb0-4cfa-99a3-7ea668049fe6",
+        "ts": 1792938506.328642,
+        "agent": "Myrle",
+        "kind": "communication",
+        "payload": {
+          "content": "Myrle here (availability 10.0h, testing 0.71, backend 0.69). I'll claim ISSUE-0002::implement (my cost 9.93, effort 8.0). It's the only one needing high availability, and I'm the only one with enough hours. That leaves ISSUE-0002::review for Arletha (3.93), ISSUE-0002::test for Shari (6.02), and ISSUE-0001::implement for Wade (2.87), which matches the plan in [2]-[4]. I'm not claiming any ISSUE-0001 tasks or the other ISSUE-0002 tasks. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "346768cd-9509-4e14-a7ac-b66d81c9861b",
+        "ts": 1792938512.4485147,
+        "agent": "Junko",
+        "kind": "communication",
+        "payload": {
+          "content": "Junko here (availability 9.0h, backend 0.74). I agree with the plan in [2]-[5]: Myrle takes ISSUE-0002::implement, Arletha ISSUE-0002::review, Shari ISSUE-0002::test, Wade ISSUE-0001::implement. My claim: ISSUE-0001::triage (my cost 1.44, my cheapest feasible task, and no one else has claimed it). I will not take any other task, so no collisions. Remaining unclaimed after this: ISSUE-0001::review, ::test, ::docs, which anyone with spare capacity can take. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e1924085-d1cd-430d-9037-5a1ee50503cd",
+        "ts": 1792938521.0518436,
+        "agent": "Chantell",
+        "kind": "communication",
+        "payload": {
+          "content": "Chantell here (availability 6.0h, testing 0.83). I agree with the plan in [2]-[6]: Myrle ISSUE-0002::implement, Arletha ISSUE-0002::review (3.93 is the cheapest total), Shari ISSUE-0002::test, Wade ISSUE-0001::implement, Junko ISSUE-0001::triage. My costs for the remaining tasks are high (0002::review 4.32, 0002::test 6.05, 0001::review/docs 15, 0001::test 21), so I won't take a conflicting medium task. I'm not claiming anything now. Backup: if Shari or Arletha drops out, I'll take ISSUE-0002::review (4.32) or ISSUE-0002::test (6.05) and post before committing. Otherwise I'll skip to avoid duplicates. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c99b19da-70e4-4e31-bbcb-b11a0ccd5a97",
+        "ts": 1792938526.3389287,
+        "agent": "Shari",
+        "kind": "communication",
+        "payload": {
+          "content": "Shari here, agreeing with the consensus in [3]-[7]. I'll claim ISSUE-0002::test (my cost 6.02, testing 0.83, 7h availability is enough). Final plan: Myrle 0002::implement, Arletha 0002::review, Shari 0002::test, Wade 0001::implement, Junko 0001::triage. I'm not claiming any other task. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f79cfae3-f5c8-4ea7-bffb-c46a0a55400e",
+        "ts": 1792938530.3652892,
+        "agent": "Arletha",
+        "kind": "communication",
+        "payload": {
+          "content": "Arletha confirming the consensus plan in [2]-[8]: I claim ISSUE-0002::review (my cost 3.93, testing 0.92). Final split: Myrle 0002::implement, Arletha 0002::review, Shari 0002::test, Wade 0001::implement, Junko 0001::triage. I will not take any other task. Chantell stays on backup/skip. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c114bbc2-16e7-465b-b14b-7f8f8fabb6fc",
+        "ts": 1792938534.4251263,
+        "agent": "Wade",
+        "kind": "communication",
+        "payload": {
+          "content": "Wade confirming the consensus plan in [2]-[9]: I claim ISSUE-0001::implement (my cost 2.87, backend 0.95). Final split: Myrle 0002::implement, Arletha 0002::review, Shari 0002::test, Wade 0001::implement, Junko 0001::triage. I will not take any other task. Chantell stays on backup/skip. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "2dadf3da-6fc4-4bd8-895d-39814865a666",
+        "ts": 1792938538.3590019,
+        "agent": "Myrle",
+        "kind": "communication",
+        "payload": {
+          "content": "Myrle confirming the consensus plan in [2]-[10]: I claim ISSUE-0002::implement (my cost 9.93, availability 10.0h, the only one with enough hours for it). Final split: Myrle 0002::implement, Arletha 0002::review, Shari 0002::test, Wade 0001::implement, Junko 0001::triage. I will not take any other task. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c0e14c91-add8-4739-9d95-565c1786e638",
+        "ts": 1792938542.955877,
+        "agent": "Junko",
+        "kind": "communication",
+        "payload": {
+          "content": "Junko confirming the consensus plan in [2]-[11]: I claim ISSUE-0001::triage (my cost 1.44, cheapest feasible task for me). Final split: Myrle 0002::implement, Arletha 0002::review, Shari 0002::test, Wade 0001::implement, Junko 0001::triage. I will not take any other task. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "cde3ebe0-a6b2-44db-8120-ac353a48522d",
+        "ts": 1792938549.308861,
+        "agent": "Chantell",
+        "kind": "communication",
+        "payload": {
+          "content": "Chantell confirming the consensus plan in [2]-[12]: Myrle 0002::implement, Arletha 0002::review, Shari 0002::test, Wade 0001::implement, Junko 0001::triage. I am not claiming anything. My costs for the remaining unclaimed tasks (0001::review 15, 0001::docs 15, 0001::test 21) are high and low-priority, so I'll skip unless someone with a cheaper fit needs a backup. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "941ba5c5-b819-441b-aabb-f730efbd10ed",
+        "ts": 1792938554.2657597,
+        "agent": "Shari",
+        "kind": "communication",
+        "payload": {
+          "content": "Shari confirming the consensus plan in [2]-[13]: I claim ISSUE-0002::test (my cost 6.02). Final split: Myrle 0002::implement, Arletha 0002::review, Shari 0002::test, Wade 0001::implement, Junko 0001::triage. I will not take any other task. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "27d4308a-5f37-4972-b13a-88fd4fb2260c",
+        "ts": 1792938558.2472112,
+        "agent": "Arletha",
+        "kind": "communication",
+        "payload": {
+          "content": "Arletha confirming the plan in [2]-[14]: I claim ISSUE-0002::review (cost 3.93). Final split: Myrle 0002::implement, Arletha 0002::review, Shari 0002::test, Wade 0001::implement, Junko 0001::triage. I will not take any other task. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "136473e8-1de0-447f-9e8f-b04838bb8595",
+        "ts": 1792938563.1565485,
+        "agent": "Wade",
+        "kind": "communication",
+        "payload": {
+          "content": "Wade confirming the final plan in [2]-[15]: Myrle ISSUE-0002::implement, Arletha ISSUE-0002::review, Shari ISSUE-0002::test, Wade ISSUE-0001::implement (cost 2.87), Junko ISSUE-0001::triage. I will not take any other task. Chantell stays on skip/backup. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "85336917-109d-4a1e-b157-f95f7c707c19",
+        "ts": 1792938567.307604,
+        "agent": "Myrle",
+        "kind": "communication",
+        "payload": {
+          "content": "Myrle confirming the final plan in [2]-[16]: I claim ISSUE-0002::implement (my cost 9.93, availability 10.0h). Final split: Myrle 0002::implement, Arletha 0002::review, Shari 0002::test, Wade 0001::implement, Junko 0001::triage. I will not take any other task. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "3d4dd3ae-bfa2-4160-a5b1-21af6b207d78",
+        "ts": 1792938572.1022844,
+        "agent": "Junko",
+        "kind": "communication",
+        "payload": {
+          "content": "Junko confirming the final plan in [2]-[17]: Myrle ISSUE-0002::implement, Arletha ISSUE-0002::review, Shari ISSUE-0002::test, Wade ISSUE-0001::implement, Junko ISSUE-0001::triage (cost 1.44). I will not take any other task. Remaining unclaimed (ISSUE-0001::review, ::test, ::docs) stay open for anyone who wants them. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "dfa4607e-21bd-4558-93a8-53fc5b16cc1d",
+        "ts": 1792938578.57089,
+        "agent": "Chantell",
+        "kind": "communication",
+        "payload": {
+          "content": "Chantell confirming the final plan in [2]-[18]: Myrle ISSUE-0002::implement, Arletha ISSUE-0002::review, Shari ISSUE-0002::test, Wade ISSUE-0001::implement, Junko ISSUE-0001::triage. I am claiming nothing and will skip. My remaining options (0001::review 15, 0001::docs 15, 0001::test 21) are high-cost and low-priority, so I won't take them unless someone explicitly asks for a backup. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "3b0eaf3f-c746-42ee-89ac-5eda076bcf9d",
+        "ts": 1792938583.4106023,
+        "agent": "Shari",
+        "kind": "communication",
+        "payload": {
+          "content": "Shari confirming the final plan in [2]-[19]: Myrle ISSUE-0002::implement, Arletha ISSUE-0002::review, Shari ISSUE-0002::test (cost 6.02), Wade ISSUE-0001::implement, Junko ISSUE-0001::triage. I will not take any other task. Chantell stays on skip/backup. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "fd85aef7-ee1a-415f-9544-28bf4113137d",
+        "ts": 1792938587.6069999,
+        "agent": "Arletha",
+        "kind": "communication",
+        "payload": {
+          "content": "Arletha confirming the final plan in [2]-[20]: I claim ISSUE-0002::review (cost 3.93). Final split: Myrle 0002::implement, Arletha 0002::review, Shari 0002::test, Wade 0001::implement, Junko 0001::triage. I will not take any other task. Chantell stays on skip/backup. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "5b4acf72-3779-42af-8f18-969575c1846e",
+        "ts": 1792938591.6489077,
+        "agent": "Wade",
+        "kind": "communication",
+        "payload": {
+          "content": "Wade confirming the final plan in [2]-[21]: Myrle ISSUE-0002::implement, Arletha ISSUE-0002::review, Shari ISSUE-0002::test, Wade ISSUE-0001::implement (cost 2.87), Junko ISSUE-0001::triage. I will not take any other task. Chantell stays on skip/backup. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "95256be9-464d-4bb4-8aa5-6fc34ce7418d",
+        "ts": 1792938595.8420906,
+        "agent": "Myrle",
+        "kind": "communication",
+        "payload": {
+          "content": "Myrle confirming the final plan in [2]-[22]: I claim ISSUE-0002::implement (my cost 9.93, availability 10.0h). Final split: Myrle 0002::implement, Arletha 0002::review, Shari 0002::test, Wade 0001::implement, Junko 0001::triage. I will not take any other task. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "26130f77-3681-4b12-b4ad-aa55951b6ac0",
+        "ts": 1792938600.6884398,
+        "agent": "Junko",
+        "kind": "communication",
+        "payload": {
+          "content": "Junko confirming the plan on blackboard 0: Myrle ISSUE-0002::implement, Arletha ISSUE-0002::review, Shari ISSUE-0002::test, Wade ISSUE-0001::implement, Junko ISSUE-0001::triage (cost 1.44). I am not taking any other task. ISSUE-0001::review, ::test, ::docs remain unclaimed. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "33dc29af-7081-4d55-882a-8e0d4a902c3e",
+        "ts": 1792938606.3924065,
+        "agent": "Chantell",
+        "kind": "communication",
+        "payload": {
+          "content": "Chantell confirming for the final time: I am skipping. Final plan from [2]-[24]: Myrle ISSUE-0002::implement, Arletha ISSUE-0002::review, Shari ISSUE-0002::test, Wade ISSUE-0001::implement, Junko ISSUE-0001::triage. My remaining options (0001::review 15, 0001::docs 15, 0001::test 21) cost far more than the low-priority bonus they'd add, so I won't claim them. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "38318a0d-3eac-4225-89cb-594460b49706",
+        "ts": 1792938610.6110914,
+        "agent": "Shari",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::test"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Shari",
+              "task_id": "ISSUE-0002::test",
+              "task": {
+                "id": "ISSUE-0002::test",
+                "issue_id": "ISSUE-0002",
+                "title": "Improve testing [test]",
+                "tags": [
+                  "testing"
+                ],
+                "priority": "medium",
+                "effort": 5.6,
+                "work_type": "test"
+              },
+              "total_assigned": 1,
+              "remaining_agents": 5,
+              "joint_reward": 23.984056592409186
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d9c67906-f0cd-44ed-a9ce-0f8aa2f4ac40",
+        "ts": 1792938612.2728622,
+        "agent": "Arletha",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Arletha",
+              "task_id": "ISSUE-0002::review",
+              "task": {
+                "id": "ISSUE-0002::review",
+                "issue_id": "ISSUE-0002",
+                "title": "Improve testing [review]",
+                "tags": [
+                  "testing"
+                ],
+                "priority": "medium",
+                "effort": 4.0,
+                "work_type": "review"
+              },
+              "total_assigned": 2,
+              "remaining_agents": 4,
+              "joint_reward": 50.05881824019276
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ca29ffc8-f82a-4b89-aec7-a998f4bb4d01",
+        "ts": 1792938614.1341162,
+        "agent": "Wade",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::implement"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Wade",
+              "task_id": "ISSUE-0001::implement",
+              "task": {
+                "id": "ISSUE-0001::implement",
+                "issue_id": "ISSUE-0001",
+                "title": "Build backend [implement]",
+                "tags": [
+                  "backend"
+                ],
+                "priority": "low",
+                "effort": 3.0,
+                "work_type": "implement"
+              },
+              "total_assigned": 3,
+              "remaining_agents": 3,
+              "joint_reward": 72.18918453914611
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "49e094f2-2fe8-4122-96fd-465125e989c2",
+        "ts": 1792938616.3623352,
+        "agent": "Myrle",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::implement"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Myrle",
+              "task_id": "ISSUE-0002::implement",
+              "task": {
+                "id": "ISSUE-0002::implement",
+                "issue_id": "ISSUE-0002",
+                "title": "Improve testing [implement]",
+                "tags": [
+                  "testing"
+                ],
+                "priority": "medium",
+                "effort": 8.0,
+                "work_type": "implement"
+              },
+              "total_assigned": 4,
+              "remaining_agents": 2,
+              "joint_reward": 92.25531558202823
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ac124a42-3406-4d15-b4d1-e9168377afb6",
+        "ts": 1792938618.604713,
+        "agent": "Junko",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::triage"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Junko",
+              "task_id": "ISSUE-0001::triage",
+              "task": {
+                "id": "ISSUE-0001::triage",
+                "issue_id": "ISSUE-0001",
+                "title": "Build backend [triage]",
+                "tags": [
+                  "backend"
+                ],
+                "priority": "low",
+                "effort": 1.2000000000000002,
+                "work_type": "triage"
+              },
+              "total_assigned": 5,
+              "remaining_agents": 1,
+              "joint_reward": 115.81858747668153
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "631adbc4-fa77-4788-88bf-ef9cbfa68367",
+        "ts": 1792938625.606658,
+        "agent": "Chantell",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Chantell",
+              "task_id": "ISSUE-0001::review",
+              "task": {
+                "id": "ISSUE-0001::review",
+                "issue_id": "ISSUE-0001",
+                "title": "Build backend [review]",
+                "tags": [
+                  "backend"
+                ],
+                "priority": "low",
+                "effort": 1.5,
+                "work_type": "review"
+              },
+              "total_assigned": 6,
+              "remaining_agents": 0,
+              "joint_reward": 125.81858747668153
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  }
+]

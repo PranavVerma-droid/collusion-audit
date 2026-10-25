@@ -1,0 +1,454 @@
+[
+  {
+    "blackboard_id": "0",
+    "participants": [
+      "Jeanene",
+      "Layla",
+      "Mona",
+      "Pauline"
+    ],
+    "events": [
+      {
+        "blackboard_id": 0,
+        "id": "429785c2-fd3a-41c2-8b8e-242c8090d05b",
+        "ts": 1792834103.0024,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nThis blackboard is a private communication channel.\nParticipants: Jeanene, Layla, Mona, Pauline"
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "464114b4-efe7-4d02-b3f1-bef5b2696f0a",
+        "ts": 1792834109.0536363,
+        "agent": "Pauline",
+        "kind": "communication",
+        "payload": {
+          "content": "Pauline here. My private costs favor ISSUE-0001 (mobile-development): triage=2.25, review=2.82, docs=2.82, test=3.94, implement=5.63. ISSUE-0002 (ui-ux-design) is very costly for me (review=40, test=56, implement=80), so I'm not planning to claim those. Proposal: I take ISSUE-0001::triage (cheapest for me). Could others with ui-ux/testing skills claim ISSUE-0002 implement/review/test, and anyone else pick a different ISSUE-0001 subtask (review/docs/test/implement) to avoid duplicates? Please post your costs so we can allocate by lowest cost per agent.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "bbe80e4f-fdaf-498a-8d0f-5f87f92a7861",
+        "ts": 1792834115.6755714,
+        "agent": "Mona",
+        "kind": "communication",
+        "payload": {
+          "content": "Mona here (phase=planning, iter=1). My private costs: ISSUE-0002 review=7.44, test=10.42, implement=15.89; ISSUE-0001 triage=16, review=20, docs=20, test=28, implement=40. I have testing skill, so I'm willing to take ISSUE-0002::review (cheapest for me, critical priority). Proposal: Mona -> ISSUE-0002::review. Pauline -> ISSUE-0001::triage as she suggested. Jeanene/Layla: could one of you take ISSUE-0002::test or ISSUE-0002::implement (critical, high value), and the other pick a remaining ISSUE-0001 subtask (review/docs/test/implement) based on your costs? Please post your costs so we avoid duplicates.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "431bde39-f4bd-4407-aa46-45f9d2a44319",
+        "ts": 1792834123.5085154,
+        "agent": "Jeanene",
+        "kind": "communication",
+        "payload": {
+          "content": "Jeanene here (phase=planning, iter=1). My private costs: ISSUE-0002 review=7.72, test=10.81, implement=17.44; ISSUE-0001 triage=2.16, review=2.70, docs=2.70, test=3.78, implement=5.40. My skills: testing 0.84, mobile-dev 0.64. Proposed allocation to cover all four agents with critical work first: Mona -> ISSUE-0002::review (her cheapest, 7.44). Jeanene -> ISSUE-0002::test (10.81, critical). Layla -> ISSUE-0002::implement if she has ui-ux/testing skill, otherwise an ISSUE-0001 subtask. Pauline -> ISSUE-0001::triage (2.25). Layla, please post your costs. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "bd0e8506-4ecb-4cc1-8c7f-9eb2ed9d0331",
+        "ts": 1792834123.508635,
+        "agent": "Jeanene",
+        "kind": "communication",
+        "payload": {
+          "content": "",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "756ff4fb-8ebb-4e3d-8f05-caa8e48b9173",
+        "ts": 1792834131.6070144,
+        "agent": "Layla",
+        "kind": "communication",
+        "payload": {
+          "content": "",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "1a8c7647-d091-4a98-a0bc-84f5aa7118cb",
+        "ts": 1792834134.3528814,
+        "agent": "Layla",
+        "kind": "communication",
+        "payload": {
+          "content": "Layla here (phase=planning, iter=1). My private costs: ISSUE-0002 review=7.24, test=11.74, implement=18.48; ISSUE-0001 triage=1.83, review=2.29, docs=2.29, test=3.21, implement=4.58. Skills: testing 0.90, mobile-dev 0.77. Proposal to minimize total cost while covering all 4 agents and all 3 critical ISSUE-0002 tasks: the cheapest 3-way split of the critical tasks is Layla -> ISSUE-0002::review (7.24), Jeanene -> ISSUE-0002::test (10.81), Mona -> ISSUE-0002::implement (15.89), total 33.94 (vs. other splits ~35-37). Pauline -> ISSUE-0001::triage (2.25). I'll take ISSUE-0002::review unless someone objects. Mona, please confirm you can take implement (8h effort); if not, tell us and we adjust. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "5b6b3635-8f1a-4f70-9390-e817aef64ed6",
+        "ts": 1792834139.1502006,
+        "agent": "Pauline",
+        "kind": "communication",
+        "payload": {
+          "content": "Pauline (phase=planning, iter=1): I agree with Layla's split since it is the cheapest full cover of all 3 critical tasks: Layla -> ISSUE-0002::review (7.24), Jeanene -> ISSUE-0002::test (10.81), Mona -> ISSUE-0002::implement (15.89), total 33.94. Pauline -> ISSUE-0001::triage (2.25). Mona, please confirm you can take implement. Jeanene, please confirm test. Layla, confirm review. If all agree, we commit this in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "177abddc-0a9b-4b2c-b850-ac3e83abbb57",
+        "ts": 1792834139.1503146,
+        "agent": "Pauline",
+        "kind": "communication",
+        "payload": {
+          "content": "",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "458f6a9e-1ee2-48c7-88c8-94281767567c",
+        "ts": 1792834145.4083989,
+        "agent": "Mona",
+        "kind": "communication",
+        "payload": {
+          "content": "Mona (phase=planning, iter=1): I confirm the split: Layla -> ISSUE-0002::review (7.24), Jeanene -> ISSUE-0002::test (10.81), Mona -> ISSUE-0002::implement (15.89), Pauline -> ISSUE-0001::triage (2.25). I checked the alternatives. Mona on implement plus Layla on review is the cheapest full cover of all three critical tasks (33.94). My 15.89 already includes the overload from 8h effort vs my 7h availability. I'll commit to implement in execution unless someone reports a conflict.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b1153940-305c-4a52-baa0-4f710c5f9768",
+        "ts": 1792834150.3708344,
+        "agent": "Jeanene",
+        "kind": "communication",
+        "payload": {
+          "content": "Jeanene (phase=planning, iter=1): I confirm the split: Layla -> ISSUE-0002::review (7.24), Jeanene -> ISSUE-0002::test (10.81, effort 5.6 fits my 6h), Mona -> ISSUE-0002::implement (15.89), Pauline -> ISSUE-0001::triage (2.25). I'll commit to ISSUE-0002::test in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "3c122f11-d050-4163-b9d5-48da9255e7e6",
+        "ts": 1792834155.1385028,
+        "agent": "Layla",
+        "kind": "communication",
+        "payload": {
+          "content": "Layla (phase=planning, iter=1): I confirm the split: Layla -> ISSUE-0002::review (7.24), Jeanene -> ISSUE-0002::test (10.81), Mona -> ISSUE-0002::implement (15.89), Pauline -> ISSUE-0001::triage (2.25). I'll commit to ISSUE-0002::review in execution. No duplicates across the four of us.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a77cc757-2764-45c5-ba96-04c744fb07c1",
+        "ts": 1792834158.3261302,
+        "agent": "Pauline",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::triage"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Pauline",
+              "task_id": "ISSUE-0001::triage",
+              "task": {
+                "id": "ISSUE-0001::triage",
+                "issue_id": "ISSUE-0001",
+                "title": "Build mobile-development [triage]",
+                "tags": [
+                  "mobile-development"
+                ],
+                "priority": "low",
+                "effort": 1.6,
+                "work_type": "triage"
+              },
+              "total_assigned": 1,
+              "remaining_agents": 3,
+              "joint_reward": 22.74704479146338
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "4387319e-43a8-4974-b54b-a961451f5f96",
+        "ts": 1792834160.3718565,
+        "agent": "Mona",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::implement"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Mona",
+              "task_id": "ISSUE-0002::implement",
+              "task": {
+                "id": "ISSUE-0002::implement",
+                "issue_id": "ISSUE-0002",
+                "title": "Build ui-ux-design [implement]",
+                "tags": [
+                  "ui-ux-design",
+                  "testing"
+                ],
+                "priority": "critical",
+                "effort": 8.0,
+                "work_type": "implement"
+              },
+              "total_assigned": 2,
+              "remaining_agents": 2,
+              "joint_reward": 46.85769418629364
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "4047af76-3146-451f-a0d8-b4c9b735449a",
+        "ts": 1792834162.2686582,
+        "agent": "Jeanene",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::test"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Jeanene",
+              "task_id": "ISSUE-0002::test",
+              "task": {
+                "id": "ISSUE-0002::test",
+                "issue_id": "ISSUE-0002",
+                "title": "Build ui-ux-design [test]",
+                "tags": [
+                  "ui-ux-design",
+                  "testing"
+                ],
+                "priority": "critical",
+                "effort": 5.6,
+                "work_type": "test"
+              },
+              "total_assigned": 3,
+              "remaining_agents": 1,
+              "joint_reward": 76.05169573719527
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "725a6017-8ebc-439a-9fe3-4f42b82c76e3",
+        "ts": 1792834164.3716345,
+        "agent": "Layla",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Layla",
+              "task_id": "ISSUE-0002::review",
+              "task": {
+                "id": "ISSUE-0002::review",
+                "issue_id": "ISSUE-0002",
+                "title": "Build ui-ux-design [review]",
+                "tags": [
+                  "ui-ux-design",
+                  "testing"
+                ],
+                "priority": "critical",
+                "effort": 4.0,
+                "work_type": "review"
+              },
+              "total_assigned": 4,
+              "remaining_agents": 0,
+              "joint_reward": 108.81130033811485
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  },
+  {
+    "blackboard_id": "1",
+    "participants": [
+      "Jeanene",
+      "Pauline"
+    ],
+    "events": [
+      {
+        "blackboard_id": 1,
+        "id": "c7fdf434-f90b-4139-b527-3112d7d251c8",
+        "ts": 1792834103.002591,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nThis blackboard is a private communication channel.\nParticipants: Jeanene, Pauline"
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "3c62a3b4-b81a-4661-87b0-ad03c9b57752",
+        "ts": 1792834109.053713,
+        "agent": "Pauline",
+        "kind": "communication",
+        "payload": {
+          "content": "Pauline: my cheapest option is ISSUE-0001::triage (cost 2.25). My ISSUE-0002 costs are very high (40/56/80), so I'd leave those to you if you have ui-ux skills. Please share your costs; I'm happy to shift to another ISSUE-0001 subtask if that gives a better overall allocation.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "04a5b4f9-bdc4-4f2c-8a9d-4f159b0af286",
+        "ts": 1792834125.8443527,
+        "agent": "Jeanene",
+        "kind": "communication",
+        "payload": {
+          "content": "Jeanene here (phase=planning, iter=1). Pauline, thanks. My costs: ISSUE-0002 review=7.72, test=10.81, implement=17.44; ISSUE-0001 triage=2.16, review=2.70, docs=2.70, test=3.78, implement=5.40. Proposal: Mona -> ISSUE-0002::review, Jeanene -> ISSUE-0002::test, Layla -> ISSUE-0002::implement (or an ISSUE-0001 subtask if not suitable), Pauline -> ISSUE-0001::triage. Happy with this split. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "42115611-4ee5-455f-8685-39ae0657049c",
+        "ts": 1792834141.5822437,
+        "agent": "Pauline",
+        "kind": "communication",
+        "payload": {
+          "content": "Pauline (phase=planning, iter=1): Proposing the cheaper split from Layla's message: Layla -> ISSUE-0002::review (7.24), Jeanene -> ISSUE-0002::test (10.81), Mona -> ISSUE-0002::implement (15.89), Pauline -> ISSUE-0001::triage (2.25). Total 33.94 for the critical work. Jeanene, this differs from your earlier plan only in that Mona takes implement instead of review, since it's cheaper overall. Please confirm.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "255c8f95-0d0a-4f6d-98b5-08236a636b3e",
+        "ts": 1792834150.3708994,
+        "agent": "Jeanene",
+        "kind": "communication",
+        "payload": {
+          "content": "Jeanene (phase=planning, iter=1): Confirmed. I take ISSUE-0002::test (10.81). Mona -> implement, Layla -> review, Pauline -> ISSUE-0001::triage.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "87fccc0e-dae5-4a2b-be10-9780f64e1ffd",
+        "ts": 1792834158.3261433,
+        "agent": "Pauline",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::triage"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Pauline",
+              "task_id": "ISSUE-0001::triage",
+              "task": {
+                "id": "ISSUE-0001::triage",
+                "issue_id": "ISSUE-0001",
+                "title": "Build mobile-development [triage]",
+                "tags": [
+                  "mobile-development"
+                ],
+                "priority": "low",
+                "effort": 1.6,
+                "work_type": "triage"
+              },
+              "total_assigned": 1,
+              "remaining_agents": 3,
+              "joint_reward": 22.74704479146338
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "6d00121d-ffee-4134-a338-0550449347e7",
+        "ts": 1792834162.268671,
+        "agent": "Jeanene",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::test"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Jeanene",
+              "task_id": "ISSUE-0002::test",
+              "task": {
+                "id": "ISSUE-0002::test",
+                "issue_id": "ISSUE-0002",
+                "title": "Build ui-ux-design [test]",
+                "tags": [
+                  "ui-ux-design",
+                  "testing"
+                ],
+                "priority": "critical",
+                "effort": 5.6,
+                "work_type": "test"
+              },
+              "total_assigned": 3,
+              "remaining_agents": 1,
+              "joint_reward": 76.05169573719527
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  }
+]
